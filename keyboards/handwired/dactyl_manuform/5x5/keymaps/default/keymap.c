@@ -23,6 +23,18 @@ extern keymap_config_t keymap_config;
 #define O_LGUI OSM(MOD_LGUI)
 #define O_RGUI OSM(MOD_RGUI)
 
+#define LW_Z  LWIN_T(KC_Z)
+#define LS_X LS
+#define RA_C RALT_T(KC_C)
+#define RL_V  LT(_RHT, KC_V)
+#define LC_B LCTL_T(KC_B)
+
+#define RC_N RCTL_T(KC_N)
+#define LL_M  LT(_LFT, KC_M)
+#define RA_COMM RALT_T(KC_COMM)
+#define RS_DOT RSFT_T(KC_DOT)
+#define RW_SLSH RWIN_T(KC_SLSH)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Base (qwerty)
@@ -48,22 +60,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT( \
   KC_Q, KC_W, KC_E,    KC_R,    KC_T,                                       KC_Y, KC_U,    KC_I,    KC_O,   KC_P,    \
   KC_A, KC_S, KC_D,    KC_F,    KC_G,                                       KC_H, KC_J,    KC_K,    KC_L,   KC_SCLN, \
-  KC_Z, KC_X, KC_C,    KC_V,    KC_B,                                       KC_N, KC_M,    KC_COMM, KC_DOT, KC_SLSH, \
-              O_RALT,  O_LSFT,                                              O_RSFT, O_RALT,  \
-                               RIGHT, KC_SPC, O_LALT, O_RCTL,  KC_ENT, LEFT,
-                                      KC_BSPC,O_LGUI, KC_TAB, KC_ESC),
+  LW_Z, LS_X, RA_C,    RL_V,    LC_B,                                       RC_N, LL_M,    RA_COMM, RS_DOT, RW_SLSH, \
+              KC_ESC,  KC_SPC,                                              KC_ENT, KC_TAB,  \
+                               KC_BSPC, KC_DEL, KC_HOME, KC_VOLU,  KC_F6, KC_ESC,
+                                        O_LALT, KC_END,  KC_VOLD,  O_LALT),
 [_LFT] = LAYOUT( \
-  KC_1,     KC_2,   KC_3,   KC_4,    KC_5,                                  ____,   ____,   ____,   ____,   ____, \
+  KC_1,     KC_2,   KC_3,   KC_4,    KC_5,                                  KC_6,   KC_7,   KC_8,   KC_9,   KC_0, \
   KC_QUOT,  KC_MINS,KC_GRV, KC_BSLS, KC_PGUP,                               ____,   ____,   ____,   ____,   ____, \
   KC_LEFT,  KC_UP,  KC_DOWN,KC_RGHT, KC_PGDN,                               ____,   ____,   ____,   ____,   ____, \
-            ____, ____,                                                         O_RGUI, O_RCTL,
+            ____, ____,                                                     ____, ____,
                                         ____, ____, ____, ____, ____, ____,
                                             ____, ____, ____, ____),
 [_RHT] = LAYOUT( \
-  ____,     ____,   ____,   ____,    ____,                                  KC_6,   KC_7,   KC_8,   KC_9,   KC_0, \
-  ____,     ____,   ____,   ____,    ____,                                  KC_DLR, KC_LPRN,KC_RPRN,KC_EQL, KC_PLUS, \
-  ____,     ____,   ____,   ____,    ____,                                  KC_PERC,KC_LBRC,KC_RBRC,KC_CIRC, ____, \
-            O_LCTL,  O_LGUI,                                                   ____, ____,
+  KC_1,     KC_2,   KC_3,   KC_4,    KC_5,                                  KC_6,   KC_7,   KC_8,   KC_9,   KC_0, \
+  ____,   ____,   ____,   ____,    ____,                                  KC_DLR, KC_LPRN,KC_RPRN,KC_EQL, KC_PLUS, \
+  ____,   ____,   ____,   ____,    ____,                                  KC_PERC,KC_LBRC,KC_RBRC,KC_CIRC, ____, \
+            ____,   ____,                                                   ____, ____,
                                         ____, ____, ____, ____, ____, ____,
                                             ____, ____, ____, ____)
 };
