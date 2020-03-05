@@ -24,7 +24,7 @@ extern keymap_config_t keymap_config;
 #define O_RGUI OSM(MOD_RGUI)
 
 #define LW_Z  LWIN_T(KC_Z)
-#define LS_X LS
+#define LS_X LSFT_T(KC_X)
 #define RA_C RALT_T(KC_C)
 #define RL_V  LT(_RHT, KC_V)
 #define LC_B LCTL_T(KC_B)
